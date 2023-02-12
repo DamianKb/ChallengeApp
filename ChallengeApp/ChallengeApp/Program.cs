@@ -3,7 +3,7 @@ string myName = "Ewa";
 string mySex = "Kobieta";
 string mySex2 = "Mężczyzna";
 var myAge2 = 17;
-
+bool man = true;
 
 if (myAge < 40 && mySex == "Kobieta")
 {
@@ -31,7 +31,12 @@ if (myAge > 30 && mySex2 == "Mężczyzna")
         Console.WriteLine("Jestem mężczyzną w sile wieku");
 }
 
-
+if (man == true)
+{
+    Console.WriteLine("Jestem Mężczyzną");
+}
+if (man != false)
+    Console.WriteLine("Jestem Kobietą");
 
 
 

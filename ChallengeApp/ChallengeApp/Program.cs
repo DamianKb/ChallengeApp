@@ -1,81 +1,59 @@
-﻿int number = 4556;
-string numberAsString = number.ToString();
-char[] letters = numberAsString.ToCharArray();
+﻿using ChallengeApp;
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+Employee user1 = new Employee ("Damian" , "Nowak", "27");
+Employee user2 = new Employee ("Ewelina" , "Nowak", "26");
+Employee user3 = new Employee ("Alicja" , "Nowak", "13");
 
+user1.AddScore(1);
+user1.AddScore(2);
+user1.AddScore(3);
+user1.AddScore(5);
+user1.AddScore(10);
 
+user2.AddScore(10);
+user2.AddScore(5);
+user2.AddScore(3);
+user2.AddScore(2);
+user2.AddScore(1);
 
+user3.AddScore(1);
+user3.AddScore(2);
+user3.AddScore(3);
+user3.AddScore(9);
+user3.AddScore(4);
 
-foreach (char letter in letters)
-{
-   if(letter == '0')
-    { 
-        counter0++;
-    }
-    else if (letter == '1')
+List<Employee> users = new List <Employee>()
+{ user1, user2, user3};
+
+int maxResult = -1;
+
+Employee userWithMaxResult = null;
+
+foreach (var Employee in users)
+{ 
+    if (Employee.Result > maxResult)
+
     {
-        counter1++;
-    }
-    else if (letter == '2')
-    { 
-        counter2++; 
-    }
-   else if (letter == '3')
-    { 
-        counter3++; 
-    }
-    else if (letter == '4')
-    {
-        counter4++;
-    }
-    else if (letter == '5')
-    {
-        counter5++;
-    }
-    else if (letter == '6')
-    {
-        counter6++;
-    }
-    else if (letter == '7')
-    {
-        counter7++;
-    }
-    else if (letter == '8')
-    {
-        counter8++;
-    }
-    else if (letter == '9')
-    {
-        counter9++;
-    }
-     
+        userWithMaxResult = Employee;
+        maxResult = Employee.Result;
+            }
 }
 
-{
-    Console.WriteLine("Wyniki dla liczby:" + number);
-    Console.WriteLine("0 => " + counter0);
-    Console.WriteLine("1 => " + counter1);
-    Console.WriteLine("2 => " + counter2);
-    Console.WriteLine("3 => " + counter3);
-    Console.WriteLine("4 => " + counter4);
-    Console.WriteLine("5 => " + counter5);
-    Console.WriteLine("6 => " + counter6);
-    Console.WriteLine("7 => " + counter7);
-    Console.WriteLine("8 => " + counter8);
-    Console.WriteLine("9 => " + counter9);
+Console.WriteLine("Pracownik z najlepszym wynikiem: " + userWithMaxResult.Name +" "+userWithMaxResult.Surname);
+  
+    Console.WriteLine( "Ilość punktów: " + maxResult );
 
-}
-    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
